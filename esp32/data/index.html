@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Smart Home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+<style>
+	#her{
+	margin: 0px auto;
+	width: 100%;
+}
+	@media only all and (max-width: 640px) {
+		.logo{
+            width: 50px; 
+			height: 50px;
+			vertical-align: middle;
+			fill: currentColor;
+			overflow: hidden;
+        }
+		.logo1{
+            width: 35px; 
+			height: 35px;
+			vertical-align: middle;
+			fill: currentColor;
+			overflow: hidden;
+			margin-bottom: 5px;
+			margin-top: -5px;
+        }
+		td{
+			height: 45px;
+		}
+		#bgrtb{
+			background-color: #25A5C9;
+			color: white;
+			font-family: Helvetica ;
+		}
+	#a{
+			
+		background: #25A5C9;
+		color: white;
+		text-align: center;
+		width: 100%;
+		min-height: 40px;
+		font-size: 30px;
+		font-family: Cursive,Helvetica,Calibri   ;
+	}
+
+	#home{
+		align-items: center;
+		background-color: #C7C5C5;
+		margin-top: 5px ;
+		margin-bottom: 5px;
+		/* border: 1px solid black;
+		border-radius: 10px;  */
+		width: 100%; 
+		min-height:350px; 
+		float: left;
+	}
+	.control{
+		display: none; 
+	}
+	#control_tlp{
+		float: left;
+		width: 100%; 
+		height: 330px;
+		/* background-color: #25A5C9; */
+	}
+	td{
+		box-shadow: 0px 0px 8px 0px #6E6E6E;
+		border-radius: 5px;
+		padding-bottom: 3px;
+		
+	}
+	.roomleft{
+		border-radius: 5px;
+		width: 49%; 
+		height: 170px; 
+		/* border: 1px solid blue;  */
+		float:left;
+
+
+	}
+
+	.roomright{
+		border-radius: 5px;
+		width: 50%; 
+		height: 170px; 
+		/* border: 1px solid red;  */
+		float:right; 
+		padding-left: 1%;
+
+	}
+
+	.quat{
+			width: 30px; 
+			height: 30px;
+			float: right;
+			vertical-align: middle;
+			fill: currentColor;
+			overflow: hidden;
+		}
+
+	#clock {
+	text-align: center;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	}
+
+
+	#bgrTemp{
+		width: 94%; 
+		height: 20px; 
+		background: #C7C5C5; 
+		margin: 5px;
+		border-radius: 5px;
+	}
+	#valTemp_rps{
+		width: 10%; 
+		height: 20px; 
+		background: #25A5C9;
+		border-radius: 5px 10px 10px 5px; 
+
+	}
+
+	.btnBat {
+		box-shadow: 0px 0px 8px 0px #6E6E6E;
+		border: 1px solid #00FF00; 
+		width: 40px; 
+		height: 40px; 
+		border-radius: 25px;
+		/* margin-left: 23px;
+		margin-right: 10px; */
+		background-color: #088A08;
+		color: #fff;
+	}
+	.btnBat:hover{
+		transform: scale(1.05,1.05);
+		box-shadow: 0px 0px 8px 0px #00FF00;
+	}
+	.btnTat {
+		box-shadow: 0px 0px 8px 0px #6E6E6E;
+		border: 1px solid #FF0000; 
+		width: 40px; 
+		height: 40px; 
+		border-radius: 25px;		
+		background-color:  #DF0101;
+		color: #fff;
+
+	}
+	.btnTat:hover{
+		transform: scale(1.05,1.05);
+		box-shadow: 0px 0px 8px 0px #FF0000;
+	}
+	.cua {
+        left: 27%;
+        float: left;
+        -webkit-transform-origin: left;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        position: absolute;
+        background:#E17E05;
+        width: 70px;
+        height: 6px;
+    }
+
+	#t1{
+			width:6px; 
+			height:100%;
+			background-color: #2E2E2E;
+			float: left;
+
+		}
+		#t2{
+			width:6px; 
+			height:70%;
+			background-color: #2E2E2E;
+			float: right;
+
+		}
+		#t3{
+			width:27%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: left;
+		}
+		#t4{
+			width:44%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: right;
+		}
+
+		#t5{
+			width:40%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: left; 
+			margin-top: 159px;
+		}
+		#t6{
+			width:30%; 
+			height:6px;background-color: #2E2E2E;
+			float: right;
+			margin-top: 159px;
+		}
+		#t7{
+			width:105%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: right;
+
+		}
+		#t8{
+			width:6px; 
+			height:98%;
+			background-color: #2E2E2E;
+			float: right;
+		}
+		#t9{
+			width:45%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: left; 
+			margin-top: 159px;
+			margin-left: -20px;
+		}
+		#t10{
+			width:35%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: right; 
+			margin-top: 159px;
+		}
+		#t11{
+			width:6px; 
+			height:99%;
+			background-color: #2E2E2E;
+			float: left;
+		}
+		#t12{
+			width:6px; 
+			height:70%;
+			background-color: #2E2E2E;
+			float: right;
+
+		}
+		#t13{
+			width:100%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: right;
+			
+		}
+		#t14{
+			width:6px; 
+			height:99%;
+			background-color: #2E2E2E;
+			float: right;
+
+		}
+		#t15{
+			width:105%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: right;
+		}   
+
+	}
+
+
+
+	@media only all and (min-width: 640px){
+	#control_tlp{
+	display: none; 
+	}
+	.logo1{
+            width: 50px; 
+			height: 50px;
+			vertical-align: middle;
+			fill: currentColor;
+			overflow: hidden;
+			margin-bottom: 5px;
+        }
+	#bgrtb{
+			background-color: #25A5C9;
+			color: white;
+			font-family: Helvetica ;
+		}
+	#home{
+		align-items: center;
+		background-color: #C7C5C5;
+		margin-top: 15px ;
+		margin-bottom: 5px;
+		/* border: 1px solid black;
+		border-radius: 10px;  */
+		width: 74%; 
+		/* min-height:520px;  */
+		float: left;
+	}
+	.control{
+		margin-top: 15px ;
+		margin-bottom: 5px;
+		border-radius: 10px;
+		width: 25%; 
+		min-height: 450px; 
+		float: right;
+	}
+	td{
+		box-shadow: 0px 0px 8px 0px #6E6E6E;
+		border-radius: 5px;
+		padding-bottom: 3px;
+		
+	}
+	#a{
+		float: left;
+		background: #25A5C9;
+		color: white;
+		text-align: center;
+		width: 100%;
+		min-height: 40px;
+		font-size: 40px;
+		font-family: Cursive,Helvetica,Calibri;
+		margin-top: -5px;
+
+	}
+	#clock {
+		text-align: center;
+		margin-top: 6px;
+		margin-bottom: 6px;
+		
+	}
+
+	.roomleft{
+		border-radius: 5px;
+		width: 50%; 
+		height: 255px; 
+		/* border: 1px solid blue;  */
+		float:left;
+
+
+	}
+
+	.roomright{
+		border-radius: 5px;
+		width: 49%; 
+		height: 255px; 
+		/* border: 1px solid red;  */
+		float:right; 
+		padding-left: 1%;
+
+	}
+	
+
+	#bgrTemp{
+		width: 94%; 
+		height: 32px; 
+		background: #C7C5C5; 
+		margin: 5px;
+		border-radius: 5px;
+	}
+	#valTemp{
+		width: 10%; 
+		height: 32px; 
+		background: #25A5C9;
+		border-radius: 5px 10px 10px 5px; 
+
+	}
+
+	.btnBat {
+		box-shadow: 0px 0px 8px 0px #6E6E6E;
+		border: 1px solid #00FF00; 
+		width: 50px; 
+		height: 50px; 
+		border-radius: 25px;
+		margin-left: 23px;
+		margin-right: 10px;
+		background-color: #088A08;
+		color: #fff;
+	}
+	.btnBat:hover{
+		transform: scale(1.05,1.05);
+		box-shadow: 0px 0px 8px 0px #00FF00;
+	}
+	.btnTat {
+		box-shadow: 0px 0px 8px 0px #6E6E6E;
+		border: 1px solid #FF0000; 
+		width: 50px; 
+		height: 50px; 
+		border-radius: 25px;		
+		background-color: #DF0101 ;
+		color: #fff;
+
+	}
+	.btnTat:hover{
+		transform: scale(1.05,1.05);
+		box-shadow: 0px 0px 8px 0px #FF0000;
+	}
+	.cua {
+        left: 20%;
+        float: left;
+        -webkit-transform-origin: left;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        position: absolute;
+        background:#E17E05;
+        width: 100px;
+        height: 6px;
+    }
+
+	#t1{
+			width:6px; 
+			height:100%;
+			background-color: #2E2E2E;
+			float: left;
+
+		}
+		#t2{
+			width:6px; 
+			height:70%;
+			background-color: #2E2E2E;
+			float: right;
+
+		}
+		#t3{
+			width:31%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: left;
+		}
+		#t4{
+			width:46%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: right;
+		}
+
+		#t5{
+			width:45%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: left; 
+			margin-top: 243px;
+		}
+		#t6{
+			width:35%; 
+			height:6px;background-color: #2E2E2E;
+			float: right;
+			margin-top: 243px;
+		}
+		#t7{
+			width:102%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: right;
+
+		}
+		#t8{
+			width:6px; 
+			height:98%;
+			background-color: #2E2E2E;
+			float: right;
+		}
+		#t9{
+			width:45%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: left; 
+			margin-top: 243px;
+			margin-left: -20px;
+		}
+		#t10{
+			width:35%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: right; 
+			margin-top: 243px;
+		}
+		#t11{
+			width:6px; 
+			height:99%;
+			background-color: #2E2E2E;
+			float: left;
+		}
+		#t12{
+			width:6px; 
+			height:70%;
+			background-color: #2E2E2E;
+			float: right;
+
+		}
+		#t13{
+			width:100%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: right;
+			
+		}
+		#t14{
+			width:6px; 
+			height:99%;
+			background-color: #2E2E2E;
+			float: right;
+
+		}
+		#t15{
+			width:102%; 
+			height:6px;
+			background-color: #2E2E2E;
+			float: right;
+		}   
+
+		.quat{
+			width: 40px; 
+			height: 40px;
+			float:right;
+			vertical-align: middle;
+			fill: currentColor;
+			overflow: hidden;
+		}
+
+}
+	@-webkit-keyframes quay {
+		from {
+			-webkit-transform: rotate(0deg);
+		}
+		to {
+			-webkit-transform: rotate(360deg);
+		}
+	}
+
+	@-webkit-keyframes moCua {
+        from {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        to {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+    }
+
+    @-webkit-keyframes dongCua {
+        from {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        to {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+	}
+</style>
+<body>
+
+<div id="her">
+	<div id="a">
+		<svg class="logo1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		viewBox="0 0 460.298 460.297" xml:space="preserve">
+			<path d="M230.149,120.939L65.986,256.274c0,0.191-0.048,0.472-0.144,0.855c-0.094,0.38-0.144,0.656-0.144,0.852v137.041
+				c0,4.948,1.809,9.236,5.426,12.847c3.616,3.613,7.898,5.431,12.847,5.431h109.63V303.664h73.097v109.64h109.629
+				c4.948,0,9.236-1.814,12.847-5.435c3.617-3.607,5.432-7.898,5.432-12.847V257.981c0-0.76-0.104-1.334-0.288-1.707L230.149,120.939
+				z"/>
+			<path d="M457.122,225.438L394.6,173.476V56.989c0-2.663-0.856-4.853-2.574-6.567c-1.704-1.712-3.894-2.568-6.563-2.568h-54.816
+				c-2.666,0-4.855,0.856-6.57,2.568c-1.711,1.714-2.566,3.905-2.566,6.567v55.673l-69.662-58.245
+				c-6.084-4.949-13.318-7.423-21.694-7.423c-8.375,0-15.608,2.474-21.698,7.423L3.172,225.438c-1.903,1.52-2.946,3.566-3.14,6.136
+				c-0.193,2.568,0.472,4.811,1.997,6.713l17.701,21.128c1.525,1.712,3.521,2.759,5.996,3.142c2.285,0.192,4.57-0.476,6.855-1.998
+				L230.149,95.817l197.57,164.741c1.526,1.328,3.521,1.991,5.996,1.991h0.858c2.471-0.376,4.463-1.43,5.996-3.138l17.703-21.125
+				c1.522-1.906,2.189-4.145,1.991-6.716C460.068,229.007,459.021,226.961,457.122,225.438z"/>
+	</svg>
+		SmartHome</div>
+</div>
+	<div id = "home" class="" >
+		<div id="phongkhach" class="roomleft">			
+			<div id="t1"></div>
+			<div id="t2"></div>
+			<div id="t3"></div>
+			<div class="cua" id="cua"></div>
+			<div id="t4"></div>
+			<div id="t5"></div>
+			<div id="t6"></div>
+		</div>
+		<div id="phongngu" class="roomright">		
+			<div id="t7"></div>
+			<div id="t8"></div>
+			<div id="t9"></div>
+			<div id="t10"></div>
+		</div>
+		<div id="phongbep" class="roomleft">		
+			<div id="t11"></div>
+			<div id="t12"></div>
+			<svg class="quat" id="quat"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+				<path d="M512 469.333333C488.533333 469.333333 469.333333 488.533333 469.333333 512 469.333333 535.466667 488.533333 554.666667 512 554.666667 535.466667 554.666667 554.666667 535.466667 554.666667 512 554.666667 488.533333 535.466667 469.333333 512 469.333333M533.333333 85.333333C725.333333 85.333333 730.026667 237.653333 629.333333 288 587.093333 308.906667 568.32 353.706667 560.213333 393.386667 580.693333 401.92 598.613333 415.146667 612.266667 432.213333 770.133333 346.88 939.946667 380.586667 939.946667 533.333333 939.946667 725.333333 787.626667 729.6 737.28 628.48 715.946667 586.24 670.72 567.466667 631.04 559.36 622.506667 579.84 609.28 597.333333 592.213333 611.84 677.12 769.28 643.413333 938.666667 490.666667 938.666667 298.666667 938.666667 294.826667 785.92 395.52 735.573333 437.333333 714.666667 456.106667 670.293333 464.64 631.04 443.733333 622.506667 425.386667 608.853333 411.733333 591.786667 254.293333 676.266667 85.333333 642.986667 85.333333 490.666667 85.333333 298.666667 237.226667 293.973333 287.573333 395.093333 308.906667 437.333333 353.706667 455.68 393.386667 463.786667 401.493333 443.306667 415.146667 425.386667 432.64 411.733333 347.733333 254.293333 381.44 85.333333 533.333333 85.333333Z"/>
+			</svg>
+			<div id="t13"></div>
+		</div>
+		<div id="phongvs" class="roomright">		
+			<div id="t14"></div>
+			<div id="t15"></div>
+		</div>
+	</div>
+
+	<div class="control">
+		<table  style="font-family: arial ; width: 100%; min-height: 450px ">
+			<tbody>	
+			<tr>
+				<td colspan="3">
+					<div id="clock">
+						<span id="gio1">00</span><span> :</span>
+						<span id="phut1">00</span><span> :</span>
+						<span id="giay1">00</span><span> </span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 49%; text-align: center;" id="bgrtb">Nhiệt Độ</td>
+				<td>
+					<div id='bgrTemp'>
+						<div id="valTemp">	
+						</div>
+					</div>				
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 49%; text-align: center;" id="bgrtb" >
+					Đèn phòng khách
+				</td>
+				<td>
+					<button id="btnPhongKhach1" class="btnBat" >Bật</button>
+					<button id="btnPhongKhach2" class="btnTat" >Tắt</button>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 49%; text-align: center;" id="bgrtb" >
+					Đèn phòng ngủ
+				</td>
+				<td>
+					<button id="btnPhongNgu1" class="btnBat">Bật</button>
+					<button id="btnPhongNgu2" class="btnTat">Tắt</button>
+				</td>
+			</tr>
+			
+			<tr>
+				<td style="width: 49%; text-align: center;" id="bgrtb" >
+					Đèn phòng bếp
+				</td>
+				<td>
+					<button id="btnPhongBep1" class="btnBat">Bật</button>
+					<button id="btnPhongBep2" class="btnTat">Tắt</button>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 49%; text-align: center;" id="bgrtb">
+					Đèn phòng vệ sinh
+				</td>
+				<td>
+					<button id="btnPhongVeSinh1" class="btnBat">Bật</button>
+					<button id="btnPhongVeSinh2" class="btnTat">Tắt</button>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 49%; text-align: center;" id="bgrtb">
+					Cửa
+				</td>
+				<td>
+					<button id="btnCua1" class="btnBat">Mở</button>
+					<button id="btnCua2" class="btnTat">Đóng</button>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 49%; text-align: center;" id="bgrtb">
+					Quạt
+				</td>
+				<td> 
+					<button id="btnQuat1" class="btnBat" >Bật</button>
+					<button id="btnQuat2" class="btnTat">Tắt</button>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 49%; text-align: center;" id="bgrtb" >
+					Cảnh Báo
+				</td>
+				<td>
+					<button id="btnCanhBao1" class="btnBat">Bật</button>
+					<button id="btnCanhBao2" class="btnTat">Tắt</button>
+				</td>
+			</tr>	
+			<tr>
+				<td style="width: 49%; text-align: center;" id="bgrtb">
+					Tất cả đèn
+				</td>
+				<td>
+					<button id="btnAllDen1" class="btnBat" >Bật</button>
+					<button id="btnAllDen2" class="btnTat" >Tắt</button>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+
+	<div id="control_tlp">
+		<table  style="width: 100%; text-align: center;">
+			<tr>
+				<td colspan="2" id="bgrtb">Đồng hồ</td>
+				<td colspan="4" rowspan="2">
+					<svg class="logo" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 460.298 460.297" xml:space="preserve">
+						<path d="M230.149,120.939L65.986,256.274c0,0.191-0.048,0.472-0.144,0.855c-0.094,0.38-0.144,0.656-0.144,0.852v137.041
+							c0,4.948,1.809,9.236,5.426,12.847c3.616,3.613,7.898,5.431,12.847,5.431h109.63V303.664h73.097v109.64h109.629
+							c4.948,0,9.236-1.814,12.847-5.435c3.617-3.607,5.432-7.898,5.432-12.847V257.981c0-0.76-0.104-1.334-0.288-1.707L230.149,120.939
+							z"/>
+						<path d="M457.122,225.438L394.6,173.476V56.989c0-2.663-0.856-4.853-2.574-6.567c-1.704-1.712-3.894-2.568-6.563-2.568h-54.816
+							c-2.666,0-4.855,0.856-6.57,2.568c-1.711,1.714-2.566,3.905-2.566,6.567v55.673l-69.662-58.245
+							c-6.084-4.949-13.318-7.423-21.694-7.423c-8.375,0-15.608,2.474-21.698,7.423L3.172,225.438c-1.903,1.52-2.946,3.566-3.14,6.136
+							c-0.193,2.568,0.472,4.811,1.997,6.713l17.701,21.128c1.525,1.712,3.521,2.759,5.996,3.142c2.285,0.192,4.57-0.476,6.855-1.998
+							L230.149,95.817l197.57,164.741c1.526,1.328,3.521,1.991,5.996,1.991h0.858c2.471-0.376,4.463-1.43,5.996-3.138l17.703-21.125
+							c1.522-1.906,2.189-4.145,1.991-6.716C460.068,229.007,459.021,226.961,457.122,225.438z"/>
+				</svg>
+				<br><div id="a">Smart Home</div>
+				</td>
+				<td colspan="2" id="bgrtb">Nhiệt độ</td>
+				
+				
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div id="clock">
+						<span id="gio">00</span><span> :</span>
+						<span id="phut">00</span><span> :</span>
+						<span id="giay">00</span><span> </span>
+					</div>
+
+				</td>
+				<td colspan="2">
+					<div id='bgrTemp'>
+						<div id="valTemp_rps">	
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" id="bgrtb">Phòng khách</td>
+				<td colspan="2" id="bgrtb">Phòng ngủ</td>
+				<td colspan="2" id="bgrtb">Phòng bếp</td>	
+				<td colspan="2" id="bgrtb">Phòng vệ sinh</td>				
+			</tr>
+			<tr>
+				<td>
+					<button id="btnPhongKhach1_rps" class="btnBat">Bật</button>					
+				</td>
+				<td>
+					<button id="btnPhongKhach2_rps" class="btnTat">Tắt</button>
+				</td>
+				<td>
+					<button id="btnPhongNgu1_rps" class="btnBat">Bật</button>
+				</td>
+				<td>
+					<button id="btnPhongNgu2_rps" class="btnTat">Tắt</button>
+				</td>
+				<td>
+					<button id="btnPhongBep1_rps" class="btnBat">Bật</button>
+				</td>
+				<td>
+					<button id="btnPhongBep2_rps" class="btnTat">Tắt</button>
+				</td>
+				<td>
+					<button id="btnPhongVeSinh1_rps" class="btnBat">Bật</button>
+				</td>
+				<td>
+					<button id="btnPhongVeSinh2_rps" class="btnTat">Tắt</button>
+				</td>
+
+			</tr>
+
+			<tr>
+				<td colspan="2" id="bgrtb">Cửa</td>
+				<td colspan="2" id="bgrtb">Quạt</td>
+				<td colspan="2" id="bgrtb">Cảnh Báo</td>	
+				<td colspan="2" id="bgrtb">Tất cả đèn</td>				
+			</tr>
+			<tr>
+				<td>
+					<button id="btnCua1_rps" class="btnBat">Mở</button>
+				</td>
+				<td>
+					<button id="btnCua2_rps" class="btnTat">Đóng</button>
+				</td>
+				<td>
+					<button id="btnQuat1_rps" class="btnBat">Bật</button>
+				</td>
+				<td>
+					<button id="btnQuat2_rps" class="btnTat">Tắt</button>
+				</td>
+				<td>
+					<button id="btnCanhBao1_rps" class="btnBat">Bật</button>
+				</td>
+				<td>
+					<button id="btnCanhBao2_rps" class="btnTat">Tắt</button>
+				</td>
+				<td>
+					<button id="btnAllDen1_rps" class="btnBat" >Bật</button>
+				</td>
+				<td>
+					<button id="btnAllDen2_rps" class="btnTat" >Tắt</button>
+				</td>
+
+			</tr>
+
+		</table>
+	</div>
+
+</body>
+</html>
+
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyCFp_Yx2xoe-Q6g4QzUYTHA7iZTE_mq5Ts",
+        authDomain: "smarthome-ba53b.firebaseapp.com",
+        databaseURL: "https://smarthome-ba53b-default-rtdb.firebaseio.com",
+        projectId: "smarthome-ba53b",
+        storageBucket: "smarthome-ba53b.appspot.com",
+        messagingSenderId: "237512072144",
+        appId: "1:237512072144:web:0a7e9d429badc6c9be77d5",
+        measurementId: "G-N3EGKL5MEP"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+
+<script type="text/javascript">
+
+    var phongKhachbat = document.getElementById("btnPhongKhach1");
+	var phongKhachtat = document.getElementById("btnPhongKhach2");
+	var phongKhachbat_rps = document.getElementById("btnPhongKhach1_rps");
+	var phongKhachtat_rps = document.getElementById("btnPhongKhach2_rps");
+	var phongKhach = document.getElementById("phongkhach");
+
+	var phongNgubat = document.getElementById("btnPhongNgu1");
+	var phongNgutat = document.getElementById("btnPhongNgu2");
+	var phongNgubat_rps = document.getElementById("btnPhongNgu1_rps");
+	var phongNgutat_rps = document.getElementById("btnPhongNgu2_rps");
+	var phongNgu = document.getElementById("phongngu");
+
+	var phongBepbat = document.getElementById("btnPhongBep1");
+	var phongBeptat = document.getElementById("btnPhongBep2");
+	var phongBepbat_rps = document.getElementById("btnPhongBep1_rps");
+	var phongBeptat_rps = document.getElementById("btnPhongBep2_rps");
+	var phongBep = document.getElementById("phongbep");
+
+	var phongVeSinhbat = document.getElementById("btnPhongVeSinh1");
+	var phongVeSinhtat = document.getElementById("btnPhongVeSinh2");
+	var phongVeSinhbat_rps = document.getElementById("btnPhongVeSinh1_rps");
+	var phongVeSinhtat_rps = document.getElementById("btnPhongVeSinh2_rps");
+	var phongVeSinh = document.getElementById("phongvs");
+
+	var allDenbat = document.getElementById("btnAllDen1")
+	var allDentat = document.getElementById("btnAllDen2");
+	var allDenbat_rps = document.getElementById("btnAllDen1_rps")
+	var allDentat_rps = document.getElementById("btnAllDen2_rps");
+
+	var batQuat = document.getElementById("btnQuat1");
+	var tatQuat = document.getElementById("btnQuat2");
+	var batQuat_rps = document.getElementById("btnQuat1_rps");
+	var tatQuat_rps = document.getElementById("btnQuat2_rps");
+
+	var moCua = document.getElementById("btnCua1");
+   	var dongCua = document.getElementById("btnCua2");
+	var moCua_rps = document.getElementById("btnCua1_rps");
+   	var dongCua_rps = document.getElementById("btnCua2_rps");
+
+	var batCoi = document.getElementById("btnCanhBao1");
+   	var tatCoi= document.getElementById("btnCanhBao2");
+	var batCoi_rps = document.getElementById("btnCanhBao1_rps");
+   	var tatCoi_rps = document.getElementById("btnCanhBao2_rps");
+
+
+
+
+	var temp = document.getElementById("valTemp");
+	var temp_rps = document.getElementById("valTemp_rps");
+
+var firebaseValueTemp = firebase.database().ref("Sensor").child("temp");
+        firebaseValueTemp.on('value', snap =>{
+            temp.style.width= snap.val()+'%';
+            temp.innerHTML= snap.val()+' độ C';
+            temp_rps.style.width= snap.val()+'%';
+            temp_rps.innerHTML= snap.val()+'độ C';
+        });
+
+var firebaseLampLivingRoom = firebase.database().ref("Lamp").child("livingRoom");
+firebaseLampLivingRoom.on('value', snap =>{
+    if(snap.val() == "ON")  phongKhach.style.background = "#FFFF00";
+    else    phongKhach.style.background = "#C8C8C8";
+});
+
+var firebaseLampBedRoom = firebase.database().ref("Lamp").child("bedRoom");
+firebaseLampBedRoom.on('value', snap =>{
+    if(snap.val() == "ON")  phongNgu.style.background = "#FFFF00";
+    else    phongNgu.style.background = "#C8C8C8";
+});
+
+var firebaseLampKitchen = firebase.database().ref("Lamp").child("kitchen");
+firebaseLampKitchen.on('value', snap =>{
+    if(snap.val() == "ON")  phongBep.style.background = "#FFFF00";
+    else    phongBep.style.background = "#C8C8C8";
+});
+
+var firebaseLampToilet = firebase.database().ref("Lamp").child("toilet");
+firebaseLampToilet.on('value', snap =>{
+    if(snap.val() == "ON")  phongVeSinh.style.background = "#FFFF00";
+    else    phongVeSinh.style.background = "#C8C8C8";
+});
+
+var firebaseStatusDoor = firebase.database().ref("Device").child("door");
+firebaseStatusDoor.on('value', snap =>{
+    if(snap.val() == "ON")	document.getElementById("cua").style="-webkit-animation: moCua 500ms 1 steps(200, end);-webkit-transform: rotate(0deg); transform: rotate(0deg);";
+    else	document.getElementById("cua").style="-webkit-animation: dongCua 500ms 1 steps(200, end);-webkit-transform: rotate(180deg); transform: rotate(180deg);";
+});
+
+var firebaseStatusFan = firebase.database().ref("Device").child("fan");
+firebaseStatusFan.on('value', snap =>{
+    if(snap.val() == "ON")	 document.getElementById("quat").style="-webkit-animation : quay 300ms infinite linear;";
+    else	document.getElementById("quat").style="-webkit-animation : infinite 1s infinite linear;";
+});
+	function getCanhBao(){
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){		
+				if(parseFloat(xhttp.responseText) == 1 ){
+					phongBep.style.background = red;
+				}else 	   phongBep.style.background = red
+			}
+			
+		}
+		xhttp.open('GET','/canhBao', true);
+		xhttp.send();
+
+	}
+
+
+	function Dong_ho() {
+	   var gio = document.getElementById("gio");
+	   var phut = document.getElementById("phut");
+	   var giay = document.getElementById("giay");
+	   var Gio_hien_tai = new Date().getHours();
+	   var Phut_hien_tai = new Date().getMinutes();
+	   var Giay_hien_tai = new Date().getSeconds();
+	   gio.innerHTML = Gio_hien_tai;
+	   phut.innerHTML = Phut_hien_tai;
+	   giay.innerHTML = Giay_hien_tai;
+   }
+  var Dem_gio = setInterval(Dong_ho, 1000);
+
+  function Dong_ho1() {
+	   var gio = document.getElementById("gio1");
+	   var phut = document.getElementById("phut1");
+	   var giay = document.getElementById("giay1");
+	   var Gio_hien_tai = new Date().getHours();
+	   var Phut_hien_tai = new Date().getMinutes();
+	   var Giay_hien_tai = new Date().getSeconds();
+	   gio.innerHTML = Gio_hien_tai;
+	   phut.innerHTML = Phut_hien_tai;
+	   giay.innerHTML = Giay_hien_tai;
+   }
+  var Dem_gio1 = setInterval(Dong_ho1, 1000);
+
+
+phongKhachbat.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("livingRoom");
+    statusLamp.set("ON");
+}
+phongKhachtat.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("livingRoom");
+    statusLamp.set("OFF");
+}
+
+phongKhachbat_rps.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("livingRoom");
+    statusLamp.set("ON");
+}
+phongKhachtat_rps.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("livingRoom");
+    statusLamp.set("OFF");
+}
+
+phongNgubat.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("bedRoom");
+    statusLamp.set("ON");
+}
+phongNgutat.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("bedRoom");
+    statusLamp.set("OFF");
+}
+
+phongNgubat_rps.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("bedRoom");
+    statusLamp.set("ON");
+}
+phongNgutat_rps.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("bedRoom");
+    statusLamp.set("OFF");
+}
+
+phongBepbat.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("kitchen");
+        statusLamp.set("ON");
+}
+phongBeptat.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("kitchen");
+        statusLamp.set("OFF");
+}
+
+phongBepbat_rps.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("kitchen");
+        statusLamp.set("ON");
+}
+phongBeptat_rps.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("kitchen");
+        statusLamp.set("OFF");
+}
+
+phongVeSinhbat.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("toilet");
+        statusLamp.set("ON");
+}
+phongVeSinhtat.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("toilet");
+        statusLamp.set("OFF");
+}
+
+phongVeSinhbat_rps.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("toilet");
+        statusLamp.set("ON");
+}
+phongVeSinhtat_rps.onclick = function(){
+    var statusLamp = firebase.database().ref("Lamp").child("toilet");
+        statusLamp.set("OFF");
+}
+
+allDenbat.onclick = function(){
+    var statusLamp1 = firebase.database().ref("Lamp").child("livingRoom");
+    var statusLamp2 = firebase.database().ref("Lamp").child("bedRoom");
+    var statusLamp3 = firebase.database().ref("Lamp").child("kitchen");
+    var statusLamp4 = firebase.database().ref("Lamp").child("toilet");
+        statusLamp1.set("ON");
+        statusLamp2.set("ON");
+        statusLamp3.set("ON");
+        statusLamp4.set("ON");
+}
+
+allDentat.onclick = function(){
+    var statusLamp1 = firebase.database().ref("Lamp").child("livingRoom");
+    var statusLamp2 = firebase.database().ref("Lamp").child("bedRoom");
+    var statusLamp3 = firebase.database().ref("Lamp").child("kitchen");
+    var statusLamp4 = firebase.database().ref("Lamp").child("toilet");
+        statusLamp1.set("OFF");
+        statusLamp2.set("OFF");
+        statusLamp3.set("OFF");
+        statusLamp4.set("OFF");
+}
+
+allDenbat_rps.onclick = function(){
+    var statusLamp11 = firebase.database().ref("Lamp").child("livingRoom");
+    var statusLamp22 = firebase.database().ref("Lamp").child("bedRoom");
+    var statusLamp33 = firebase.database().ref("Lamp").child("kitchen");
+    var statusLamp44 = firebase.database().ref("Lamp").child("toilet");
+        statusLamp11.set("ON");
+        statusLamp22.set("ON");
+        statusLamp33.set("ON");
+        statusLamp44.set("ON");
+}
+
+allDentat_rps.onclick = function(){
+    var statusLamp11 = firebase.database().ref("Lamp").child("livingRoom");
+    var statusLamp22 = firebase.database().ref("Lamp").child("bedRoom");
+    var statusLamp33 = firebase.database().ref("Lamp").child("kitchen");
+    var statusLamp44 = firebase.database().ref("Lamp").child("toilet");
+        statusLamp11.set("OFF");
+        statusLamp22.set("OFF");
+        statusLamp33.set("OFF");
+        statusLamp44.set("OFF");
+}
+
+moCua.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("door");
+        statusDoor.set("ON");
+}
+dongCua.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("door");
+        statusDoor.set("OFF");
+}
+moCua_rps.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("door");
+        statusDoor.set("ON");
+}
+dongCua_rps.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("door");
+        statusDoor.set("OFF");
+}
+
+batQuat.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("fan");
+        statusDoor.set("ON");
+}
+tatQuat.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("fan");
+        statusDoor.set("OFF");
+}
+batQuat_rps.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("fan");
+        statusDoor.set("ON");
+}
+tatQuat_rps.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("fan");
+        statusDoor.set("OFF");
+}
+batCoi.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("horn");
+        statusDoor.set("ON");
+}
+tatCoi.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("horn");
+        statusDoor.set("OFF");
+}
+batCoi_rps.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("horn");
+        statusDoor.set("ON");
+}
+tatCoi_rps.onclick = function(){
+    var statusDoor = firebase.database().ref("Device").child("horn");
+        statusDoor.set("OFF");
+}
+
+</script>
